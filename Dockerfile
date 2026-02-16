@@ -1,4 +1,4 @@
-FROM devopspaper.jfrog.io/docker/devopspaper.jfrog.io/docker/node:22-alpine AS build
+FROM devopspaper.jfrog.io/docker/node:22-alpine AS build
 ENV NODE_ENV=development
 
 WORKDIR /build
@@ -17,7 +17,7 @@ RUN cd /build/client && \
 RUN cd /build/client && \
     yarn build 
 
-FROM devopspaper.jfrog.io/docker/devopspaper.jfrog.io/docker/node:22-alpine AS release
+FROM devopspaper.jfrog.io/docker/node:22-alpine AS release
 ARG VERSION=unknown
 
 LABEL maintainer='www.kubero.dev'
